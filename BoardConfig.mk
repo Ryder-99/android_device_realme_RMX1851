@@ -151,6 +151,7 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 # Treble
 BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
+PRODUCT_EXTRA_VNDK_VERSIONS := 28
 
 # Inherit from the proprietary version
 -include vendor/realme/RMX1851/BoardConfigVendor.mk
