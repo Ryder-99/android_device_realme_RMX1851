@@ -60,6 +60,22 @@ public:
     Return<RequestStatus> remove(uint32_t gid, uint32_t fid) override;
     Return<RequestStatus> setActiveGroup(uint32_t gid, const hidl_string& storePath) override;
     Return<RequestStatus> authenticate(uint64_t operationId, uint32_t gid) override;
+    Return<RequestStatus> authenticateAsType(uint64_t operationId, uint32_t gid, uint32_t fingerprintAuthType);
+    Return<RequestStatus> cleanUp();
+    Return<RequestStatus> pauseEnroll();
+    Return<RequestStatus> continueEnroll();
+    Return<RequestStatus> setTouchEventListener();
+    Return<RequestStatus> dynamicallyConfigLog(uint32_t on);
+    Return<RequestStatus> pauseIdentify();
+    Return<RequestStatus> continueIdentify();
+    Return<RequestStatus> getAlikeyStatus();
+    Return<RequestStatus> getEnrollmentTotalTimes();
+    Return<RequestStatus> setScreenState(uint32_t screen_state);
+    Return<RequestStatus> getEngineeringInfo(uint32_t type);
+    Return<RequestStatus> touchDown();
+    Return<RequestStatus> touchUp();
+    Return<RequestStatus> sendFingerprintCmd(uint32_t cmdId, const hidl_vec<uint8_t>& in_buf);
+    Return<RequestStatus> setFingerKeymode(uint32_t enable);
 
 private:
     sp<vendor::oppo::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint> mOppoBiometricsFingerprint;
