@@ -11,28 +11,7 @@ lib/vendor.qti.hardware.data.latency@1.0.so
 lib/vendor.qti.latency@2.0.so
 -priv-app/CNEService/CNEService.apk
 
-# DPM
-bin/dpmd
-etc/dpm/dpm.conf
-etc/init/dpmd.rc
-etc/permissions/com.qti.dpmframework.xml
-etc/permissions/dpmapi.xml
-framework/com.qti.dpmframework.jar
-framework/dpmapi.jar
-framework/tcmclient.jar
-lib64/com.qualcomm.qti.dpm.api@1.0.so
-lib64/libdpmctmgr.so
-lib64/libdpmfdmgr.so
-lib64/libdpmframework.so
-lib64/libdpmtcm.so
-lib/com.qualcomm.qti.dpm.api@1.0.so
-lib/libdpmctmgr.so
-lib/libdpmfdmgr.so
-lib/libdpmframework.so
-lib/libdpmtcm.so
--priv-app/dpmserviceapp/dpmserviceapp.apk
-
-# FM
+# FM - from beryllium - PKQ1.180729.001
 lib64/fm_helium.so
 lib64/libfm-hci.so
 -lib64/vendor.qti.hardware.fm@1.0.so
@@ -40,7 +19,7 @@ lib/fm_helium.so
 lib/libfm-hci.so
 -lib/vendor.qti.hardware.fm@1.0.so
 
-# IMS - from.beryllium - PKQ1.180729.001
+# IMS - from beryllium - PKQ1.180729.001
 -app/uceShimService/uceShimService.apk|0356d0779af006bbcc72a89f65ccd7db39bdb5e3
 etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml|8d25bd7b79baf266950eb484c1a28817f891aec2
 etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml|998076243537f61f3683a3c083f7b27510617368
@@ -74,8 +53,8 @@ lib/com.qualcomm.qti.uceservice@2.0.so|acdf4da26cd9b4d50fde740fd8799d5684bd2cb6
 lib/libdiag_system.so|12ef075e9e88883cae48ab3dd872f7d8272cad2e
 lib/libimscamera_jni.so|b0eedf282b74d0e08097e6598667d4c8571f7185
 lib/libimsmedia_jni.so|6fa4b46015b2b0fee092e784c6893894f3e0329f
-lib/libmmrtpdecoder.so|726d6f0711aa348be353516a111812b7184ac697
-lib/libmmrtpencoder.so|06b57e67a9f826a6474bf2e88bc3ef08e7c7a2cc
+lib/libmmrtpdecoder.so|68c4ee99e6b205bce1ea0304c1f8c947a9a73374
+lib/libmmrtpencoder.so|5e7b46895a3dc3a4ba4dc9d159631e306e6214a7
 lib/librcc.so|83ae225c9d710c20e216084dbe57ba866281fa8b
 lib/lib-imsvideocodec.so|9abc284dde6aa3efa5aaa4c5175f1669fad921bd
 lib/lib-imsvt.so|39ac538b0c80cc5f1ad270e334ecfadbc3256ba5
@@ -90,11 +69,11 @@ lib/vendor.qti.hardware.radio.ims@1.2.so|3ddb60258778e6876a88e4f5dafbae7728518e2
 lib/vendor.qti.hardware.radio.ims@1.3.so|921b5241c5f4542c7276f296acf0cc4497dda6bd
 -priv-app/ims/ims.apk|426b922bb43c24239e1cff8d6cca9971cf751332
 
-# QMI - from.beryllium - PKQ1.180729.001
-etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62
+# QMI - from beryllium - PKQ1.180729.001
+etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
 
-# RIL - from.beryllium - PKQ1.180729.001
+# RIL - from beryllium - PKQ1.180729.001
 -app/QtiTelephonyService/QtiTelephonyService.apk|cd17c833cc6ab3fa0985840261dbfb0a3b17b729
 etc/permissions/qcrilhook.xml|9fc58a3d54d20ac1d53bab14608815121aefbce5
 etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
