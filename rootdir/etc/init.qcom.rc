@@ -1,11 +1,5 @@
 on init
-    mount none /sbin/chargeonlymode /sbin/charger bind
-    mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio/audio_policy_configuration.xml bind
     mount none /system/etc/fstab.qcom /vendor/etc/fstab.qcom bind
-    mount none /system/lib64/hw/power.qcom.so /vendor/lib64/hw/power.qcom.so bind
-    mount none /system/lib64/soundfx/libvolumelistener.so /vendor/lib64/soundfx/libvolumelistener.so bind
-    mount none /system/lib/soundfx/libvolumelistener.so /vendor/lib/soundfx/libvolumelistener.so bind
-    mount none /system/overlay/BluetoothResCommon.apk /vendor/overlay/BluetoothResCommon.apk bind
 
     # Boot time FS tune
     write /sys/block/sda/queue/iostats 0
@@ -21,10 +15,6 @@ on init
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
     write /sys/block/dm-2/queue/read_ahead_kb 2048
-
-on boot
-    chown system system /proc/touchpanel/double_tap_enable
-    chmod 0660 /proc/touchpanel/double_tap_enable
 
 on late-fs
     # Boot time FS tune
@@ -65,10 +55,3 @@ on property:sys.boot_completed=1
     write /sys/block/dm-1/queue/read_ahead_kb 128
     write /sys/block/dm-2/queue/read_ahead_kb 128
     write /sys/block/dm-3/queue/read_ahead_kb 128
-
-on property:vold.decrypt=trigger_restart_framework
-    restart vendor.audio-hal-2-0
-
-on boot
-    # OTG
-    write /sys/class/power_supply/usb/otg_switch 1

@@ -1,23 +1,25 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.media_vol_steps=25 \
-    ro.config.vc_call_vol_steps=7
+    ro.qc.sdk.audio.fluencetype=none \
+    persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.speaker=true \
+    audio.offload.video=true \
+    audio.deep_buffer.media=true \
+    ro.af.client_heap_size_kbyte=7168 \
+    audio.offload.gapless.enabled=true
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     bt.max.hfpclient.connections=1 \
-    persist.vendor.btstack.enable.splita2dp=true \
-    persist.bluetooth.disableabsvol=true \
     persist.bluetooth.disableinbandringing=false \
-    persist.vendor.bluetooth.modem_nv_support=true \
-    persist.vendor.btstack.iotinfo.report.enable=true \
-    persist.vendor.service.bdroid.soc.alwayson=true \
-    persist.vendor.service.bt.iot.enablelogging=true
+    persist.bluetooth.disableabsvol=true \
+    persist.vendor.btstack.enable.splita2dp=true \
+    qcom.bluetooth.soc=cherokee \
+    vendor.bluetooth.soc=cherokee
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.light_ae.enable=1 \
-    persist.vendor.camera.dualcamera_bokeh=1 \
     ro.camera.hfr.enable=1 \
     ro.camera.relight.enable=0 \
     ro.camera.attr.detect.enable=1 \
@@ -30,11 +32,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.netmgrd.qos.enable=true \
-    persist.vendor.data.profile_update=true \
     persist.vendor.data.mode=concurrent \
     ro.vendor.use_data_netmgrd=true
 
-# Display post-processing
+# Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.ad=1 \
     ro.vendor.display.ad.sdr_calib_data=/vendor/etc/OPPO_OLED_AD_calib.cfg \
@@ -42,11 +43,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.demo.hdmirotationlock=false \
+    persist.hwc.enable_vds=1 \
     sdm.drop_skewed_vsync=1
-
-# Media
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.settings.xml=/system/etc/media_profiles_vendor.xml
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -61,30 +60,25 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.core_ctl_min_cpu=4 \
     ro.vendor.qti.core_ctl_max_cpu=6
 
-# RCS and IMS
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1 \
-    persist.rcs.supported=0 \
-    persist.vendor.ims.disableQXDMLogs=0 \
-    persist.vendor.ims.disableADBLogs=0 \
-    persist.vendor.ims.disableDebugLogs=0 \
-    persist.vendor.ims.disableIMSLogs=0 \
-    persist.vendor.ims.rtp.enableqxdm=3 \
-    persist.vendor.ims.vt.enableadb=3
-
-# RIL
+# Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
-    persist.vendor.radio.atfwd.start=true \
-    persist.vendor.radio.lte_vrte_ltd=1 \
-    persist.vendor.radio.cs_srv_type=1 \
-    persist.vendor.radio.relay_oprt_change=1 \
-    persist.vendor.radio.poweron_opt=1 \
-    persist.vendor.radio.rat_on=combine \
     ril.subscription.types=NV,RUIM \
-    ro.telephony.default_network=22,18 \
+    persist.rcs.supported=0 \
+    persist.radio.hvolte.enable=1 \
+    ro.telephony.default_network=22,20 \
+    persist.radio.multisim.config=dsds \
+    persist.radio.custom_exp_ecc=1 \
     telephony.lteOnCdmaDevice=1
+
+# Sensors
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qti.sensors.wu=false
+
+# VoWIFI
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.iwlan.enable=true \
+    persist.data.iwlan.rekey=4294967295
 
 # SSR
 PRODUCT_PROPERTY_OVERRIDES += \

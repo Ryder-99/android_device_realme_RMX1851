@@ -43,13 +43,6 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     tinymix
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-    BluetoothResCommon
-
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -91,10 +84,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
 
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.RMX1851
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
@@ -115,21 +104,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:/system/usr/keylayout/gpio-keys.kl
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.RMX1851
-
-# Media
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_profiles_vendor.xml:system/etc/media_profiles_vendor.xml
-
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
-
-# Power
-PRODUCT_PACKAGES += \
-    power.qcom:64
 
 # QTI
 PRODUCT_COPY_FILES += \
